@@ -4,7 +4,7 @@ if animal == "고양이" :
     print("역시 고양이가 제일 귀엽죠?")
 
 else:
-    print(f"{animal}도 귀엽지요?")
+    print(f"{animal}도 귀엽지요?") # 문자열 포맷팅 Formatting
 
 
 temp = int(input("오늘의 몇도 인가요?"))
