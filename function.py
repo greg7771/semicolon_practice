@@ -7,16 +7,15 @@ x = x_ask
 def f():
     return a * (x **2) + b * x + c
 
-print("정답은!")
-print()
-print((a * (x**2) + b * x + c))
-print()
-print("입니다~")
+print(f"{a}x^2 + {b}x + {c}")
 
-# if ask == "y" or "Y":
-#     print()
-#     print("계산 결과는")
-#     print()
-#     print((f()))
-# if ask == "n" or "N":
-#     print("다시 시도하세요")
+ask  = input("이 수식이 맞습니까?" "[y,n]")
+
+
+if ask == "y" or "Y":
+    print()
+    print("계산 결과는")
+    print()
+    print(a * (x**2) + b * x + c)
+elif ask == "n" or "N":
+    print("다시 시도하세요")
