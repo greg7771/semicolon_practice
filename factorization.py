@@ -41,12 +41,5 @@ elif root0 < 0 and root1 < 0:
     root1 = -1*root1
     result = f"(x+{float(root0)})(x+{float(root1)})"
 
-# elif root0 == type(int):
-#     root0 = int(root0)
-#     result = f"(x+{int(root0)})(x+{int(root1)})"
-
-# elif root1 == type(int):
-#     root1 = int(root1)
-
 print()
 print(result)
