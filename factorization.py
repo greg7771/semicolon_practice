@@ -1,9 +1,8 @@
 import math
-print()
-print("실수범위의 인수분해를 해주는 프로그램 입니다.")
-print()
-print("각 항의 계수는 정수만 입력해주세요.")
-print()
+
+print("실수범위의 인수분해를 해주는 프로그램 입니다.", end ="")
+print("각 항의 계수는 정수만 입력해주세요.", end = "")
+
 a = int(input("최고차항의 계수 > "))
 b = int(input("x의 계수 > "))
 c = int(input("상수항 > "))
