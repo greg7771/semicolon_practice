@@ -1,12 +1,38 @@
 import math
 
-print("실수범위의 인수분해를 해주는 프로그램 입니다.", end ="")
-print("각 항의 계수는 정수만 입력해주세요.", end = "")
+print("\n실수범위의 인수분해를 해주는 프로그램 입니다.\n")
+print("각 항의 계수는 정수만 입력해주세요.\n")
 
-a = int(input("x^2의 계수 > "))
-b = int(input("x의 계수 > "))
-c = int(input("상수항 > "))
+while True:
+    a = input("\nx^2의 계수를 입력하세요 > ")
+    try:
+        a = int(a)
+    except ValueError: # a 가 정수가 아니면 Valueerror 발생 그러면 정수로 입력하라고 다시 안내
+        print("\nx^2의 계수는 정수로 입력하세요.")
+    else:
+        break
 
+
+while True:
+    b = input("\nx의 계수를 입력하세요 > ")
+    try:
+        b = int(b)
+    except ValueError:
+        print("\nx의 계수는 정수로 입력하세요.")
+    else:
+        break
+
+
+while True:
+    c = input("\n상수항을 입력하세요 > ")
+    try:
+        c = int(c)
+    except ValueError:
+        print("\n상수항은 정수를 입력하세요.")
+    else:
+        break
+
+    
 root0 = (-b + math.sqrt(b**2 -4 * a * c)) / (2*a)
 
 root1 = (-b - math.sqrt(b**2 -4 * a * c)) / (2*a)
@@ -41,5 +67,4 @@ elif root0 < 0 and root1 < 0:
     root1 = -1*root1
     result = f"(x+{float(root0)})(x+{float(root1)})"
 
-print()
-print(result)
+print(f"\n계산결과는 > {result} 입니다!")
