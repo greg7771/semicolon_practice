@@ -1,3 +1,4 @@
+from decimal import DivisionByZero
 import math
 
 print("\n실수범위의 인수분해를 해주는 프로그램 입니다.\n")
@@ -8,7 +9,7 @@ while True:
     try:
         a = int(a)
     except ValueError: # a 가 정수가 아니면 Valueerror 발생 그러면 정수로 입력하라고 다시 안내
-        print("\nx^2의 계수는 정수로 입력하세요.")
+        print("\nx^2의 계수는 0이 아닌 정수로 입력하세요.")
     else:
         break
 
@@ -40,6 +41,11 @@ except ValueError:
     print("\n실수범위내의 인수분해만 가능합니다")
     print("\n다시 시도하세요.")
     exit()
+except ZeroDivisionError:
+    print("\nx^2의 계수가 0일경우 인수분해가 불가능합니다.")
+    print("\n다시 시도하세요.")
+    exit()
+
 
 result = f"(x{int(root0)})(x{int(root1)})"
 
