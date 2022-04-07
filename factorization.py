@@ -1,4 +1,3 @@
-from decimal import DivisionByZero
 import math
 
 print("\n실수범위의 인수분해를 해주는 프로그램 입니다.\n")
@@ -13,7 +12,6 @@ while True:
     else:
         break
 
-
 while True:
     b = input("\nx의 계수를 입력하세요 > ")
     try:
@@ -22,7 +20,6 @@ while True:
         print("\nx의 계수는 정수로 입력하세요.")
     else:
         break
-
 
 while True:
     c = input("\n상수항을 입력하세요 > ")
