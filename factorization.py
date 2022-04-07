@@ -32,10 +32,14 @@ while True:
     else:
         break
 
-    
-root0 = (-b + math.sqrt(b**2 -4 * a * c)) / (2*a)
+try:    
+    root0 = (-b + math.sqrt(b**2 -4 * a * c)) / (2*a)
 
-root1 = (-b - math.sqrt(b**2 -4 * a * c)) / (2*a)
+    root1 = (-b - math.sqrt(b**2 -4 * a * c)) / (2*a)
+except ValueError:
+    print("\n실수범위내의 인수분해만 가능합니다")
+    print("\n다시 시도하세요.")
+    exit()
 
 result = f"(x{int(root0)})(x{int(root1)})"
 
