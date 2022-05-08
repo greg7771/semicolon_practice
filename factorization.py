@@ -44,51 +44,42 @@ except ZeroDivisionError:
     exit()
 
 
-result = f"(x{int(root0)})(x{int(root1)})"
-
-if root0 == root1 and root0 > 0:
-    if type(root0) is int and type(root1) is int:
-        result = f"(x-{int(root0)})^2"
-    result = f"(x-{int(root0)})^2"
-
-elif root0 == root1 and root0 < 0:
-    root0 = -1*root0
-    if type(root0) is int and type(root1) is int:
-        root0 = -1*root0
-        result == f"(x+{int(root0)})^2"
-    result = f"(x+{int(root0)})^2"
-
-elif root0 > 0 and root1 < 0:
-    root1 = -1*root1
-    result = f"(x-{float(root0)})(x+{float(root1)})"
-
-elif root0 < 0 and root1 > 0:
-    root0 = -1*root0
-    result = f"(x+{float(root0)})(x-{float(root1)})"
-
-elif root0 > 0 and root1 > 0: #2번 근이 모두 음수일때
-    result = f"(x-{float(root0)})(x-{float(root1)})"
-
-elif root0 < 0 and root1 < 0: # 1번 근이 모두 양수일때
-    root0 = -1*root0
-    root1 = -1*root1
-    result = f"(x+{float(root0)})(x+{float(root1)})"
-
-if a > 1 and root0 > 0 and root1 > 0: # 1번 근이 모두 양수
-    if type(int(root0)) is int and type(int(root1)) is int:
-        pass
+result = ""
+if int(root0) == root0:
+    root0 = int(root0)
+if int(root1) == root1:
+    root1 = int(root1)
+if not a == 1:
+    b /= a
+    c /= a
+    if a == -1:
+        result = "-"        
     else:
-        root0 = a * root0
-        root1 = a * root1
-    result = f"{a}(x+{float(root0)})(x+{float(root1)})"
-    if type(int(root0)) is int and type(int(root1)) is int:
-        result = f"{a}(x+{int(root0)})(x+{int(root1)})"
-    else:
-        result = f"{a}(x+{float(root0)})(x+{float(root1)})"
+        result = str(a)
 
-if a > 1 and root0 < 0 and root1 < 0: # 2번 근이 모두 음수
-    result = f"{a}(x-{float(root0)})(x-{float(root1)})"
-    if type(int(root0)) is int and type(int(root1)) is int:
-        result = f"{a}(x-{int(root0)})(x-{int(root1)})"
 
+if root0 == root1 and root0 > 0 :
+    result += f"(x-{abs(root1)})^2"
+    print(f"\n계산결과는 > {result} 입니다!")
+    exit()
+
+if root0 == root1 and root0 < 0 :
+    result += f"(x+{abs(root1)})^2"
+    print(f"\n계산결과는 > {result} 입니다!")
+    exit()
+
+if root0 > 0:
+    result += f"(x-{root0})"
+elif root0 < 0:
+    result += f"(x+{abs(root0)})"
+else:
+    result += "x"
+
+if root1 > 0:
+    result += f"(x-{root1})"
+elif root1 < 0:
+    result += f"(x+{abs(root1)})"
+else:
+    result += "x"
 print(f"\n계산결과는 > {result} 입니다!")
+exit()
